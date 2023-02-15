@@ -196,7 +196,7 @@ const fetchPokemonsInfo = async () => {
 // funcion que ingresa unicamente a las propiedades que necesito del Pokemon
 const apiData = async () => {
   try {
-    await fetchPokemonsInfo();
+   
 
     // const namesSet = new Set();
 
