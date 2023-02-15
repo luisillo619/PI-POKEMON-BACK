@@ -9,6 +9,7 @@ const save_pokemon_types = () => {
   return fetch(URL)
     .then((e) => e.json())
     .then((request) => {
+      console.log("aqui", request)
       const types = [...new Set(request.results.map((e) => e.name))];
 
       return Promise.all(
