@@ -6,11 +6,9 @@ let save = false;
 const save_pokemon_types = () => {
   const URL = "https://pokeapi.co/api/v2/type";
 
-  return fetch(URL)
-    .then((e) => e.json())
-    .then((request) => {
-      console.log("aqui", request)
-      const types = [...new Set(request.results.map((e) => e.name))];
+  return axios.get(URL)
+    .then((response) => {
+      const types = [...new Set(response.data.results.map((e) => e.name))];
 
       return Promise.all(
         types.map((name) =>

@@ -133,6 +133,7 @@
 
 const { Pokemon, Type } = require("../db");
 const axios = require("axios");
+
 let pokemonsURL = [];
 let pokemonInfo = [];
 let load = false;
