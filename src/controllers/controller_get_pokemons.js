@@ -145,15 +145,16 @@ const fetchPokemonsURL = async () => {
     for (let i = 0; i < 200; i += 20) {
       console.log(i);
       promises.push(
-        await fetch(
+        axios.get(
           `https://pokeapi.co/api/v2/pokemon/?offset=${i}&limit=20`
           // {
           //   headers: { "Accept-Encoding": "gzip,deflate,compress" },
           // }
-        ).then((data) => data.json())
+        )
       );
     }
-    const data = await promises.flatMap((response) => response.results);
+    const responses = await Promise.all(promises);
+    const data = responses.flatMap((response) => response.data.results);
     pokemonsURL.push(...data);
   } catch (error) {
     throw new Error(error.message);
@@ -169,9 +170,9 @@ const fetchPokemonsInfo = async () => {
 
       async function getPokemonData(pokemon) {
         try {
-          let response = await fetch(pokemon.url).then((data) => data.json());
-          console.log(response);
-          return response;
+          let response = await axios.get(pokemon.url);
+          console.log(response.data);
+          return response.data;
         } catch (error) {
           return null;
         }

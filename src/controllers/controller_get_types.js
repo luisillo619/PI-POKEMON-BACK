@@ -1,5 +1,5 @@
 const { Type } = require("../db");
-
+const axios = require("axios");
 let save = false;
 
 // Peticion a la API para obtener los TIPOS de Pokemon
