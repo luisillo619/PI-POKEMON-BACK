@@ -6,10 +6,17 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
+// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
+
+const sequelize = new Sequelize(`postgresql://postgres:8qcI4qc0uChGlE5pN50q@containers-us-west-53.railway.app:7751/railway`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
+
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
