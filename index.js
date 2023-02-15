@@ -17,8 +17,9 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let dotenv = require('dotenv');
+dotenv.config();
 const server = require("./src/app.js");
-require('dotenv').config();
 const { conn } = require("./src/db.js");
 const PORT = process.env.PORT || 3001
 // Syncing all the models at once.
