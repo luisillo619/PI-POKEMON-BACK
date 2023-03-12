@@ -11,7 +11,7 @@ const {
 //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 // });
 
-const sequelize = new Sequelize(`postgresql://postgres:8qcI4qc0uChGlE5pN50q@containers-us-west-53.railway.app:7751/railway`, {
+const sequelize = new Sequelize(`postgresql://postgres:B9K8PqSb2B4Igm9udJ5P@containers-us-west-193.railway.app:7474/railway`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
